@@ -1,0 +1,28 @@
+<h2>custom_translation</h2>
+
+<p>Your own translations, so you can easilly internationalize your templates!</p>
+
+<p>custom_translation gives you an STE tag called <code>&lt;ste:custom_translation /&gt;</code> to include translations to your plugin and a plugin page in the backend where you can set your translations.</p>
+
+<h3>Usage of the STE Tag</h3>
+
+<code>&lt;ste:custom_translation /&gt;</code> is a self-closing tag and uses these parameters:
+
+<table class="listtab">
+	<thead>
+		<tr>
+			<th>Parameter</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>for</code></td>
+			<td>The translation key to lookup.</td>
+		</tr>
+		<tr>
+			<td><code>raw</code></td>
+			<td>If not empty, it will return the raw translation, otherwise it will be already HTML escaped.</td>
+		</tr>
+	</tbody>
+</table>

@@ -1,0 +1,43 @@
+<ste:load name="/systemtemplates/master.html" />
+<ste:block name="content">
+	<ste:default_error />
+	<ste:default_success />
+	
+	<h2>New Translation / Edit Translations</h2>
+	<form action="$rel_path_to_pluginpage" method="POST" accepted-charset="UTF-8">
+		<p>
+			Language:
+			<select name="tr_lang">
+				<ste:foreach array="all_languages" key="langcode" value="lang">
+					<option value="$langcode">$langcode: <ste:escape>$lang</ste:escape></option>
+				</ste:foreach>
+			</select>
+		</p>
+		<p>Translation key: <input type="text" name="tr_translation_key" /></p>
+		<p>Translation: <input type="text" name="tr_translation" /></p>
+		<p><input type="submit" name="tr_translation_enter" /></p>
+		<p>If you want to delete a translation, just set to an empty translation</p>
+	</form>
+	
+	<h2>Translations</h2>
+	<table class="listtab">
+		<thead>
+			<tr>
+				<th>&nbsp;</th>
+				<ste:foreach array="tr_langs" value="tr_lang">
+					<th><ste:escape>$tr_lang</ste:escape></th>
+				</ste:foreach>
+			</tr>
+		</thead>
+		<tbody>
+			<ste:foreach array="tr_translations" key="tr_transl_name" value="tr_transl_data">
+				<tr>
+					<td><strong><ste:escape>$tr_transl_name</ste:escape></strong></td>
+					<ste:foreach array="tr_transl_data" value="tr_transl_t">
+						<td><ste:escape>$tr_transl_t</ste:escape></td>
+					</ste:foreach>
+				</tr>
+			</ste:foreach>
+		</tbody>
+	</table>
+</ste:block>
